@@ -1,0 +1,49 @@
+.Alllist {
+  text-align: center;
+}
+
+.todolisttext {
+  margin-left: 10rem;
+}
+
+.listdone {
+  margin-left: 10rem;
+}
+
+button {
+  border-radius: 6px;
+  color: white;
+  background-color: green;
+  padding: 0.5rem;
+  width: 10rem;
+  font-size: large;
+  margin-left: 20px;
+}
+
+.inputtext {
+  font-size: large;
+  padding: 0.5rem;
+  margin-left: 10px;
+  border-radius: 0.5rem;
+}
+
+.inputsearch {
+  font-size: large;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: large;
+  margin-left: 155%;
+}
+
+.verticalline {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  transform: translate(-50%);
+  height: 740px;
+  border-left: 2px solid black;
+}
+
+.slider round {
+  border-radius: 4rem;
+}
