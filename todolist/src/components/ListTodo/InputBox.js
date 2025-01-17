@@ -11,28 +11,27 @@ const InputBox = ({ onTextSubmit }) => {
   };
 
   const handleSubmit = () => {
-    if (texting.trim()) {
-      onTextSubmit(texting);
-      setTexting("");
-      setError("");
-    } else {
+    // Only show error if the input is empty (no whitespace)
+    if (!texting.trim()) {
       setError("Enter Some List Here");
+      return;
     }
+    onTextSubmit(texting);
+    setTexting("");
+    setError("");
   };
 
   return (
-    <div>
-      <div className="flex gap-2 mb-4">
-        <input
-          value={texting}
-          type="text"
-          onChange={texthandle}
-          placeholder="Enter Your List..."
-          className="inputtext"
-        />
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+    <div className="flex flex-col gap-2">
+      <input
+        type="text"
+        value={texting}
+        onChange={texthandle}
+        className="inputtext"
+        placeholder="Add new item"
+      />
+      <Submit onClick={handleSubmit} />
+      {error && <p className="textcolor">{error}</p>}
     </div>
   );
 };

@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../../todolist/src/Apping.css";
 
-const Tringtoggle = () => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleToggle = () => {
-    setIsChecked(!isChecked);
-  };
+const Toggle = ({ isChecked, onChange }) => {
   return (
-    <div className="flex">
-      <label className="switch">
+    <label className="inline-flex items-center cursor-pointer">
+      <div className="relative">
         <input
           type="checkbox"
-          className="slider round"
+          className="hidden"
           checked={isChecked}
-          onChange={handleToggle}
+          onChange={onChange}
         />
-      </label>
-      <span className="slider round">{isChecked ? "ON" : "OFF"}</span>
-    </div>
+        <div
+          className={`w-10 h-6 rounded-full ${
+            isChecked ? "bg-green-500" : "bg-gray-300"
+          } transition-colors duration-200`}
+        >
+          <div
+            className={`absolute w-4 h-4 bg-white rounded-full top-1 transition-transform duration-200 ${
+              isChecked ? "translate-x-5" : "translate-x-1"
+            }`}
+          />
+        </div>
+      </div>
+    </label>
   );
 };
 
-export default Tringtoggle;
+export default Toggle;

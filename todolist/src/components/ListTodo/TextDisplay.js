@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import InputBox from "./InputBox";
+import Toggle from "./Tringtoggle";
 
 const TextDisplay = () => {
   const [items, setItems] = useState([]);
 
   const handleTextSubmit = (text) => {
-    setItems([...items, { text, completed: false }]);
+    setItems([...items, { text, completed: false, isToggled: false }]);
   };
 
   const toggleItem = (index) => {
     const newItems = [...items];
     newItems[index].completed = !newItems[index].completed;
+    setItems(newItems);
+  };
+
+  const toggleSwitch = (index) => {
+    const newItems = [...items];
+    newItems[index].isToggled = !newItems[index].isToggled;
     setItems(newItems);
   };
 
@@ -22,18 +29,27 @@ const TextDisplay = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            onClick={() => toggleItem(index)}
             className={`p-4 rounded-lg flex items-center justify-between cursor-pointer
               ${item.completed ? "bg-gray-50" : "bg-white"}
               border border-gray-200 shadow-sm hover:bg-gray-50`}
           >
-            <span
-              className={`${
-                item.completed ? "line-through text-gray-500" : ""
-              }`}
+            <div
+              onClick={() => toggleItem(index)}
+              className="flex-1 cursor-pointer"
             >
-              {item.text}
-            </span>
+              <span
+                onClick={() => toggleItem(index)}
+                className={`flex-1 cursor-pointer ${
+                  item.completed ? "line-through" : ""
+                }`}
+              >
+                {item.text}
+              </span>
+            </div>
+            <Toggle
+              isChecked={item.isToggled}
+              onChange={() => toggleSwitch(index)}
+            />
           </div>
         ))}
       </ul>
