@@ -11,7 +11,6 @@ const InputBox = ({ onTextSubmit }) => {
   };
 
   const handleSubmit = () => {
-    // Only show error if the input is empty (no whitespace)
     if (!texting.trim()) {
       setError("Enter Some List Here");
       return;
@@ -35,5 +34,4 @@ const InputBox = ({ onTextSubmit }) => {
     </div>
   );
 };
-
 export default InputBox;

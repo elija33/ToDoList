@@ -33,16 +33,8 @@ const TextDisplay = () => {
               ${item.completed ? "bg-gray-50" : "bg-white"}
               border border-gray-200 shadow-sm hover:bg-gray-50`}
           >
-            <div
-              onClick={() => toggleItem(index)}
-              className="flex-1 cursor-pointer"
-            >
-              <span
-                onClick={() => toggleItem(index)}
-                className={`flex-1 cursor-pointer ${
-                  item.completed ? "line-through" : ""
-                }`}
-              >
+            <div onClick={() => toggleItem(index)} className="listtodo">
+              <span onClick={() => toggleItem(index)} className="textlist">
                 {item.text}
               </span>
             </div>
@@ -56,5 +48,4 @@ const TextDisplay = () => {
     </div>
   );
 };
-
 export default TextDisplay;

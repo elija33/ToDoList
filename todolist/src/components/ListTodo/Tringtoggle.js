@@ -4,7 +4,7 @@ import "../../../../todolist/src/Apping.css";
 const Toggle = ({ isChecked, onChange }) => {
   return (
     <label className="inline-flex items-center cursor-pointer">
-      <div className="relative">
+      <div>
         <input
           type="checkbox"
           className="hidden"

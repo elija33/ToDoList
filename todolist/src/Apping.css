@@ -48,6 +48,34 @@ button {
   border-left: 2px solid black;
 }
 
-.slider round {
-  border-radius: 4rem;
+/* Toggle adjustments */
+.inline-flex {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+/* Adjust toggle size and positioning */
+/* .relative {
+  position: relative;
+  display: flex;
+  align-items: center;
+} */
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.listtodo {
+  cursor: pointer;
+  flex-direction: 1;
+}
+
+.textlist {
+  cursor: pointer;
+  margin-left: 5rem;
 }
