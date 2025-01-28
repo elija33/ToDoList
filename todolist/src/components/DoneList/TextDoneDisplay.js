@@ -10,6 +10,11 @@ function TextDoneDisplay() {
   return (
     <div>
       <Search onTextSubmit={handComplete} />
+      <ul className="listdone">
+        {donelist.map((item, index) => (
+          <div key={index}></div>
+        ))}
+      </ul>
     </div>
   );
 }
