@@ -55,13 +55,6 @@ button {
   margin-left: 1rem;
 }
 
-/* Adjust toggle size and positioning */
-/* .relative {
-  position: relative;
-  display: flex;
-  align-items: center;
-} */
-
 .w-10 {
   width: 2.5rem;
 }
@@ -72,10 +65,9 @@ button {
 
 .listtodo {
   cursor: pointer;
-  flex-direction: 1;
 }
 
 .textlist {
   cursor: pointer;
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
